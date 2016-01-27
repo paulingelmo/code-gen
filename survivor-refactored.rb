@@ -25,17 +25,20 @@ S       S     P S     S     S S       S S    S
 S       S    S  S     S     S  S     S  S    S
 P sSSss P ss^   P     P     P   ^sss^   P    P"
 
+# while loop variable
 active = true
 
 class Main
   attr_accessor :people, :path, :term, :index
 
   def initialize
+    # sets up instance storage and populates storage with sample
     @people = {voter: [], politician: []}
     sample
   end
 
   def setup
+    # main menu
     @path = ""
     @term = ""
     @index = nil
@@ -71,6 +74,8 @@ class Main
   end
 
   def create
+    # create menu
+    # redirects to other methods for instance creation
     puts "\n\n"
     puts "Create options:"
     puts "What kind of person would you like to create?"
@@ -95,6 +100,7 @@ class Main
   end
 
   def list
+    # list menu and logic
     puts "\n\n"
     puts "List options:"
     puts "What data would you like displayed?"
@@ -128,6 +134,8 @@ class Main
   end
 
   def edit
+    # update and delete menu
+    # redirects to search and sets path variable
     check = 0
     puts "\n\n"
     if @path == "u"
@@ -166,6 +174,8 @@ class Main
   end
 
   def search
+    # search menu and logic
+    # redirects to update or delete using path variable
     check = 0
     case @path
     when "uv", "dv"
@@ -214,6 +224,8 @@ class Main
   end
 
   def update
+    # update logic
+    # includes repetitious code shared with voter and politician setup
     puts "\n\n"
     puts "What field would you like to update"
     puts "for " + @term + "?"
@@ -312,6 +324,7 @@ class Main
   end
 
   def delete
+    # delete logic
     puts "\n\n"
     puts "Are you sure you want to delete this person?"
     puts @term
@@ -346,6 +359,7 @@ class Main
   end
 
   def voter
+    # voter instance creation
     puts "\n\n"
     puts "Enter a voter name:"
     puts ">>"
@@ -378,6 +392,7 @@ class Main
   end
 
   def politician
+    # politician instance creation
     puts "\n\n"
     puts "Enter a politician name:"
     puts ">>"
@@ -406,6 +421,7 @@ class Main
   end
 
   def sample
+    # sample database population
     @people[:voter] << Voter.new("Paul N. Ingelmo", "Liberal")
     @people[:voter] << Voter.new("Maria A. Ingelmo", "Conservative")
     @people[:voter] << Voter.new("Glenn Beck", "Tea Party")
@@ -436,6 +452,7 @@ class Politician
   end
 end
 
+# primary game loop
 united_states = Main.new
 while active
   united_states.setup
