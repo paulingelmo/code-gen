@@ -2,3 +2,26 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+body{
+  background-color: lightcoral;
+  color: lightgrey;
+}
+div.main{
+  padding: 5em;
+}
+a{
+  color: grey;
+}
+a:hover{
+  color: lightcoral;
+  background-color: grey;
+}
+.image{
+  margin-top: 7em;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
