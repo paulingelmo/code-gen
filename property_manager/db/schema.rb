@@ -11,20 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160204191901) do
+ActiveRecord::Schema.define(version: 20160204201845) do
 
-  create_table "courses", force: :cascade do |t|
+  create_table "landlords", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "course_id"
+  create_table "properties", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "city"
+    t.integer  "landlord_id"
   end
+
+  add_index "properties", ["landlord_id"], name: "index_properties_on_landlord_id"
+
+  create_table "repairs", force: :cascade do |t|
+    t.string   "type"
+    t.string   "cost"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "property_id"
+  end
+
+  add_index "repairs", ["property_id"], name: "index_repairs_on_property_id"
 
 end

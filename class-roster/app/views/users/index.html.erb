@@ -1,0 +1,7 @@
+<h2>Users Index</h2>
+
+<ol>
+  <% User.all.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+</ol>
