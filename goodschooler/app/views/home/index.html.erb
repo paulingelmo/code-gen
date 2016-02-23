@@ -1,0 +1,51 @@
+<% flash.each do |type, msg| %>
+<%= content_tag :div, msg, class: type %>
+<% end %>
+<br>
+<h1>Hello World</h1>
+
+<%= @message %>
+<br>
+<%= link_to 'Login', login_path %>
+<br>
+<%= link_to 'Logout', logout_path %>
+
+
+
+
+
+
+
+
+<%#= Time.now %><br>
+<%#= render partial: 'user', collection: @users %>
+
+
+<!-- <h2>Edit User</h2> -->
+<%#= form_for (@user) do |f| %>
+  <%#= f.label :name %>
+  <%#= f.text_field :name %>
+
+  <%#= f.label :active %>
+  <%#= f.check_box :active %>
+
+  <%#= f.label :name %>
+  <%#= f.password_field :name %>
+
+  <%#= f.label :cohort %>
+  <%#= f.select :cohort, 1..9 %>
+
+  <%#= f.label :name %>
+  <%#= f.email_field :name %>
+
+  <%#= f.label :name %>
+  <%#= f.url_field :name %>
+
+  <%#= f.label :cohort %>
+  <%#= f.number_field :cohort %>
+
+  <%#= f.label :name %>
+  <%#= f.color_field :name %>
+
+  <%#= f.submit "Update this User" %>
+<%# end %>

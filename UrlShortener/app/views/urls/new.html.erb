@@ -1,0 +1,9 @@
+<h2>New Shortened URL</h2>
+
+<%= form_for @url do |f| %>
+  <%= f.label "Enter url here:" %>
+  <br>
+  <%= f.text_field :url_long %>
+  <br>
+  <%= f.submit "Generate short" %>
+<% end %>

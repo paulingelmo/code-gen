@@ -1,0 +1,27 @@
+<h1>Music Distribution</h1>
+
+<%= form_tag site_search_path do %>
+  <%= search_field_tag :term %>
+  <%= submit_tag "Look for shit" %>
+<% end %>
+
+<p>
+  <% if @results.nil? %>
+    <p>Search our database!</p>
+  <% elsif @results.empty? %>
+    <p>Try your search again.</p>
+  <% else %>
+    <p>You searched for "<%= @term %>".</p>
+    <ul>
+      <% @results.each do |result| %>
+        <li><%= link_to result.name, "/artists/#{result.id}" %></li> <!-- or results -->
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
+<%= link_to 'Artist Entry', artists_path %>
+<br>
+<%= link_to 'Album Entry', albums_path %>
+<br>
+<%= link_to 'Label Entry', labels_path %>

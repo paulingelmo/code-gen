@@ -1,0 +1,25 @@
+<h2>Shortened URLs</h2>
+
+<%= link_to "Generate Short URL", urls_new_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Long URL</th>
+      <th>Shortened</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%= url.id %></td>
+        <td><%= url.url_long %></td>
+        <td><%= url.url_short %></td>
+        <td><%= link_to 'Destroy', url, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
