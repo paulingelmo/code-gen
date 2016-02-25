@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   resources :urls
 
-  root 'urls#new'
+  root 'urls#index'
 
   get 'urls/' => 'urls#index'
-  get 'urls/:id' => 'urls#link'
-  get 'urls/new/' => 'urls#new'
-  post 'urls/new/' => 'urls#new'
+  get ':id' => 'urls#link'
+  get 'short/:url_short' => 'urls#link_short'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

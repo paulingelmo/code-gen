@@ -5,5 +5,6 @@
   <br>
   <%= f.text_field :url_long %>
   <br>
+  <%= f.hidden_field :url_short, value: @url_short %>
   <%= f.submit "Generate short" %>
 <% end %>
